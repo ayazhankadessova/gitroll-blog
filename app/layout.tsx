@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
+import { SiteHeader } from '@/components/site-header'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -23,7 +24,11 @@ export default function RootLayout({
           inter.variable)
         }
       >
-        {children}
+        <div className='relative flex min-h-dvh flex-col bg-background'>
+          {/* fill everything */}
+          <SiteHeader />
+          <main className='flex-1'>{children}</main>
+        </div>
       </body>
     </html>
   )
