@@ -24,7 +24,7 @@ export default function RootLayout({
           inter.variable)
         }
       >
-        <div className='relative flex min-h-dvh flex-col bg-background'>
+        <div className='relative flex min-h-dvh flex-col bg-background px-4'>
           {/* fill everything */}
           <SiteHeader />
           <main className='flex-1'>{children}</main>

@@ -15,6 +15,7 @@ export const siteConfig = {
     medium: 'https://gitroll.medium.com',
     contactUs: 'https://gitroll.io/contact',
   },
+  stickyNav: true,
 }
 
 export type SiteConfig = typeof siteConfig
