@@ -19,6 +19,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.28",
+    "github-slugger": "^1.2.1",
     "lucide-react": "^0.428.0",
     "next": "14.2.5",
     "react": "^18.3.1",
@@ -27,6 +28,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/github-slugger": "^2.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
