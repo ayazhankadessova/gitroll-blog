@@ -16,6 +16,7 @@ export const siteConfig = {
     contactUs: 'https://gitroll.io/contact',
   },
   stickyNav: true,
+  author: 'GitRoll',
 }
 
 export type SiteConfig = typeof siteConfig
