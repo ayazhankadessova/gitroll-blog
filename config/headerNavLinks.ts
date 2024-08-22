@@ -6,6 +6,7 @@ interface Dropdown {
 
 interface DialogInfo {
   title: string
+  href: string
   dropdown: Dropdown[]
   toggle: boolean
 }
@@ -17,6 +18,7 @@ interface DialogsInfo {
 const dialogsInfo: DialogsInfo = {
   Products: {
     title: 'Products',
+    href: '/products',
     dropdown: [
       {
         title: 'For Devs',
@@ -46,10 +48,11 @@ const dialogsInfo: DialogsInfo = {
   },
   'About Us': {
     title: 'Our Story',
+    href: '/ourstory',
     dropdown: [
       {
-        title: 'Out Story',
-        href: '',
+        title: 'Our Story',
+        href: '/ourstory',
         description: 'Story About How We started GitRoll',
       },
       {
@@ -64,7 +67,7 @@ const dialogsInfo: DialogsInfo = {
       },
       {
         title: 'Blog',
-        href: '/docs/primitives/scroll-area',
+        href: '/blog',
         description: 'Read articles.',
       },
     ],
@@ -72,6 +75,7 @@ const dialogsInfo: DialogsInfo = {
   },
   FAQ: {
     title: 'FAQ',
+    href: '/faq',
     dropdown: [
       {
         title: 'Out Story',

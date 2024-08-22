@@ -29,7 +29,11 @@ export default function MobileNav() {
         </MobileLink>
         <div className='flex flex-col gap-3 mt-3'>
           {Object.values(headerNavLinks).map((dialog) => (
-            <MobileLink key={dialog.title} onOpenChange={setOpen} href='/blog'>
+            <MobileLink
+              key={dialog.title}
+              onOpenChange={setOpen}
+              href={dialog.href}
+            >
               {dialog.title}
             </MobileLink>
           ))}
