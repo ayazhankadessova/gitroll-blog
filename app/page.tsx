@@ -9,7 +9,7 @@ export default function Home() {
   const latestPosts = sortPosts(posts).slice(0, 5)
   return (
     <>
-      <section className='space-y-6 pb-6 pt-4 md:pb-10 md:mt-2 lg:py-28'>
+      <section className='space-y-2 pb-6 pt-4 md:pb-10 md:mt-2'>
         <div className='container flex flex-col gap-4 text-center'>
           <div className='flex flex-col gap-4 justify-center sm:flex-row'>
             <Link
