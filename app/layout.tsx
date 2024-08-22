@@ -4,7 +4,7 @@ import './globals.css'
 import { cn } from '@/lib/utils'
 import { SiteHeader } from '@/components/site-header'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-mono' })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang='en' className='scroll-pt-[6rem]'>
       <body
         className={
-          (cn('min-h-screen bg-background font-sans antialiased'),
+          (cn('min-h-screen bg-background font-mono antialiased'),
           inter.variable)
         }
       >
