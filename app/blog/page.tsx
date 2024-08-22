@@ -7,14 +7,14 @@ import { CustomPagination } from '@/components/pagination-query'
 
 const POSTS_PER_PAGE = 5
 interface BlogPageProps {
-  filterParams: {
+  searchParams: {
     page?: string
   }
 }
 
-export default async function BlogPage({ filterParams }: BlogPageProps) {
+export default async function BlogPage({ searchParams }: BlogPageProps) {
   const sortedPosts = sortPosts(posts.filter((post) => post.published))
-  const currentPage = Number(filterParams?.page) || 1
+  const currentPage = Number(searchParams?.page) || 1
   const publishedPosts = posts.filter((post) => post.published)
   const totalPages = Math.ceil(publishedPosts.length / POSTS_PER_PAGE)
 
