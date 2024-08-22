@@ -52,5 +52,8 @@ bugs:
 
 - [x] sometimes can't see mobilnav or texts
 - [x] 404 page is white
-- [] line numbers not working in rehype
-- [] pagination height
+- [x] line numbers not working in rehype
+- [x] pagination height
+- [ ] tags not grouped
+- [ ] light/dark mode
+- [ ] pagination logic
