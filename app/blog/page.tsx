@@ -3,6 +3,7 @@ import { posts } from '#site/content'
 import { PostItem } from '@/components/post-item'
 import { sortPosts } from '@/lib/utils'
 import '@/styles/mdx-style.css'
+import { CustomPagination } from '@/components/pagination-query'
 
 const POSTS_PER_PAGE = 2
 interface BlogPageProps {
@@ -14,10 +15,12 @@ interface BlogPageProps {
 export default async function BlogPage({ filterParams }: BlogPageProps) {
   const sortedPosts = sortPosts(posts.filter((post) => post.published))
   const currentPage = Number(filterParams?.page) || 1
+  const publishedPosts = posts.filter((post) => post.published)
+  const totalPages = Math.ceil(publishedPosts.length / POSTS_PER_PAGE)
 
   const displayPosts = sortedPosts.slice(
-    POSTS_PER_PAGE * (currentPage - 1) + 1,
-    currentPage
+    POSTS_PER_PAGE * (currentPage - 1),
+    POSTS_PER_PAGE * currentPage
   )
 
   return (
@@ -50,6 +53,7 @@ export default async function BlogPage({ filterParams }: BlogPageProps) {
       ) : (
         <p>No articles yet...</p>
       )}
+      <CustomPagination totalPages={totalPages} className='mt-4' />
     </div>
   )
 }
