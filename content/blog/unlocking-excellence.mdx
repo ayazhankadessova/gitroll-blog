@@ -24,13 +24,20 @@ Writing clean code is essential for several reasons:
 
 1. **Meaningful Names**: Use descriptive names for variables, functions, and classes. Avoid vague names like `data` or `temp`.
 
-   ```javascript
-   // Bad Example
-   let d = fetchData()
+```js {4} showLineNumbers
+import { useFloating } from '@floating-ui/react'
 
-   // Good Example
-   let userProfile = fetchUserProfile()
-   ```
+function MyComponent() {
+  const { refs, floatingStyles } = useFloating()
+
+  return (
+    <>
+      <div ref={refs.setReference} />
+      <div ref={refs.setFloating} style={floatingStyles} />
+    </>
+  )
+}
+```
 
 2. **Function Design**: Functions should do one thing and do it well. If a function is trying to accomplish multiple tasks, consider breaking it down.
 

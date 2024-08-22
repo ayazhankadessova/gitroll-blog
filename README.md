@@ -39,13 +39,17 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 2. clean up code
 3. headers const in smth else
 4. start making posts
+5. make 1 blog page
+6. blog > [...slug] => we can read anything after /blog/...
+7. add custom componnts
 
 fix:
 
 1. theme, search in navbar
-
 2. copy , make like components
 
 bugs:
 
-1.[x] sometimes can't see mobilnav or texts 2. [x] 404 page is white
+- [x] sometimes can't see mobilnav or texts
+- [x] 404 page is white
+- [] line numbers not working in rehype
