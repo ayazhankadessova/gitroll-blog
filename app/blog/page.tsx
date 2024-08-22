@@ -4,15 +4,6 @@ import { PostItem } from '@/components/post-item'
 import { sortPosts } from '@/lib/utils'
 import '@/styles/mdx-style.css'
 import { CustomPagination } from '@/components/pagination-query'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 
 const POSTS_PER_PAGE = 2
 interface BlogPageProps {
