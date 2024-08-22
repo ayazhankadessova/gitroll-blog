@@ -5,7 +5,7 @@ import { sortPosts } from '@/lib/utils'
 import '@/styles/mdx-style.css'
 import { CustomPagination } from '@/components/pagination-query'
 
-const POSTS_PER_PAGE = 2
+const POSTS_PER_PAGE = 5
 interface BlogPageProps {
   filterParams: {
     page?: string
