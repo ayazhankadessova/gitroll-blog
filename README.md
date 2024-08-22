@@ -43,3 +43,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 fix:
 
 1. theme, search in navbar
+
+2. copy , make like components
+
+bugs:
+
+1.[x] sometimes can't see mobilnav or texts 2. [x] 404 page is white
