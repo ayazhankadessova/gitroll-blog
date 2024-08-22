@@ -35,7 +35,20 @@ export default defineConfig({
   },
   collections: { posts },
   mdx: {
-    rehypePlugins: [],
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypePrettyCode, { theme: 'night-owl' }],
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: 'wrap',
+          properties: {
+            className: ['subheading-anchor'],
+            ariaLabel: 'Link to section',
+          },
+        },
+      ],
+    ],
     remarkPlugins: [],
   },
 })
