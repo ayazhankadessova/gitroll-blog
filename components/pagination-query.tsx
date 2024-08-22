@@ -9,6 +9,16 @@ import {
   PaginationPrevious,
   PaginationNext,
 } from './ui/pagination'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import '@/styles/mdx-style.css'
 
 interface QueryPaginationProps {
   totalPages: number
@@ -36,7 +46,20 @@ export function CustomPagination({
   return (
     <Pagination className={className}>
       <PaginationContent>
-        <p className='font-bold'>
+        <p className='font-bold m-2'>Rows per page</p>
+        <Select>
+          <SelectTrigger className='w-[70px]'>
+            <SelectValue placeholder='10' />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectItem value='10'>10</SelectItem>
+              <SelectItem value='20'>20</SelectItem>
+              <SelectItem value='30'>30</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        <p className='font-bold m-2'>
           Page {currentPage} of {totalPages}{' '}
         </p>
 
@@ -45,9 +68,7 @@ export function CustomPagination({
             href={createPageURL(prevPage)}
             aria-disabled={currentPage <= 1}
             tabIndex={currentPage <= 1 ? -1 : undefined}
-            className={
-              currentPage <= 1 ? 'pointer-events-none opacity-20' : undefined
-            }
+            className={currentPage <= 1 ? 'pointer-events-none' : undefined}
           />
         </PaginationItem>
 
@@ -55,9 +76,7 @@ export function CustomPagination({
           href={createPageURL(nextPage)}
           aria-disabled={nextPage > totalPages}
           tabIndex={nextPage > totalPages ? -1 : undefined}
-          className={
-            nextPage > totalPages ? 'pointer-events-none opacity-20' : undefined
-          }
+          className={nextPage > totalPages ? 'pointer-events-none' : undefined}
         />
       </PaginationContent>
     </Pagination>
