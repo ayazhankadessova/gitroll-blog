@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { cn, formatDate } from '@/lib/utils'
 import { Tag } from './tag'
 import React from 'react'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 interface PostItemProps {
   slug: string
@@ -21,11 +22,17 @@ export function PostItem({
   return (
     <article className='flex flex-col gap-2 border-border border-b py-3'>
       <div className='flex justify-between items-center'>
-        <dl>
-          <dd className='text-sm sm:text-base font-medium flex items-center gap-1'>
-            <time dateTime={date}>{formatDate(date)}</time>
-          </dd>
-        </dl>
+        <div className='flex items-center'>
+          <Avatar className='h-5 w-10 mr-2'>
+            <AvatarImage src='/gitroll.png' />
+          </Avatar>
+          <div>
+            <p className='text-sm font-bold'>GitRoll</p>
+            <time dateTime={date} className='text-sm'>
+              {formatDate(date)}
+            </time>
+          </div>
+        </div>
       </div>
       <div>
         <h2 className='text-2xl font-bold'>
