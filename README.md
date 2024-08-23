@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### About
+
+This `NextJS` project is an attempt to clone [`GitRoll-blog`](https://gitroll.io/blog), bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), using `TailwindCSS`, `MDX`, `Contentlayer`, and `shadcn/ui` + `lucide-react` components.
 
 ## Getting Started
 
@@ -32,7 +34,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 fix:
 
-1. theme, search in navbar
+1. [x] theme, search in navbar
 2. [x] search
 3. [x] Sort By
 4. [x] theme
@@ -51,3 +53,5 @@ bugs:
 - [x] pagination logic
 - [x] small screen, blog photo goes to up
 - [ ] cache
+- [ ] add new pics
+- [ ] add more posts
