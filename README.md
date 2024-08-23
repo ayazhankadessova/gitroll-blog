@@ -2,16 +2,16 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+```
+
+2. Run the development server:
+
+```bash
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -20,20 +20,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Code notes
 
 1. burger btn not working
 2. clean up code
@@ -41,7 +28,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 4. start making posts
 5. make 1 blog page
 6. blog > [...slug] => we can read anything after /blog/...
-7. add custom componnts
+7. add custom comps
 
 fix:
 
@@ -50,7 +37,8 @@ fix:
 3. [x] Sort By
 4. [x] theme
 5. [x] button theme too big
-6. [ ] picture in post-item should be at the end
+6. [x] picture in post-item should be at the end
+7. [x] add icons
 
 bugs:
 
@@ -60,6 +48,6 @@ bugs:
 - [x] pagination height
 - [ ] tags not grouped
 - [x] light/dark mode
-- [ ] pagination logic
+- [x] pagination logic
 - [x] small screen, blog photo goes to up
 - [ ] cache

@@ -7,6 +7,10 @@ export function BlogFooter() {
     <footer>
       <div className='mb-6 mt-14 flex flex-col items-center'>
         <div className='mb-3 flex space-x-4'>
+          <a target='_blank' rel='noreferrer' href={siteConfig.socials.discord}>
+            <span className='sr-only'>Discord</span>
+            <Icons.discord className='h-8 w-8' />
+          </a>
           <a
             target='_blank'
             rel='noreferrer'
@@ -23,17 +27,25 @@ export function BlogFooter() {
             <span className='sr-only'>YouTube</span>
             <Icons.youtube className='h-10 w-10' />
           </a>
+          <a target='_blank' rel='noreferrer' href={siteConfig.socials.medium}>
+            <span className='sr-only'>Medium</span>
+            <Icons.medium className='h-10 w-10' />
+          </a>
         </div>
-        <p className='mt-2'>© 2024 GitRoll, all rights reserved</p>
+        <p className='mt-2 text-sm text-gray-700'>
+          © 2024 GitRoll, all rights reserved
+        </p>
         <div className='mt-2 flex justify-between'>
           <Link href='/' className='mr-2'>
-            <p className='underline'>Terms of Use</p>
+            <p className='underline text-sm text-gray-500'>Terms of Use</p>
           </Link>
           <Link href='/' className='mr-2'>
-            <p className='underline'>Subscription Agreement</p>
+            <p className='underline text-sm text-gray-500'>
+              Subscription Agreement
+            </p>
           </Link>
           <Link href='/'>
-            <p className='underline'>Privacy Policy</p>
+            <p className='underline text-sm text-gray-500'>Privacy Policy</p>
           </Link>
         </div>
       </div>
