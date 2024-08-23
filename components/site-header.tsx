@@ -14,6 +14,7 @@ import {
 import headerNavLinks from '@/config/headerNavLinks'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { ThemeToggle } from './theme-toggle'
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState<{ width: number | undefined }>({
@@ -37,7 +38,7 @@ export function SiteHeader() {
   const headerClass =
     'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-5 sticky top-0 z-50'
 
-  const isDesktop = width !== undefined && width >= 600 // Adjust threshold as needed
+  const isDesktop = width !== undefined && width >= 650 // Adjust threshold as needed
 
   return (
     <header className={headerClass}>
@@ -77,12 +78,16 @@ export function SiteHeader() {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
+          <ThemeToggle />
           <Link href='' className={buttonVariants({ variant: 'default' })}>
             Contact Us
           </Link>
         </>
       ) : (
-        <MobileNav />
+        <div>
+          <ThemeToggle />
+          <MobileNav />
+        </div>
       )}
     </header>
   )

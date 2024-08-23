@@ -48,6 +48,8 @@ fix:
 1. theme, search in navbar
 2. [x] search
 3. [x] Sort By
+4. [x] theme
+5. - button theme too big
 
 bugs:
 
@@ -56,6 +58,6 @@ bugs:
 - [x] line numbers not working in rehype
 - [x] pagination height
 - [ ] tags not grouped
-- [ ] light/dark mode
+- [x] light/dark mode
 - [ ] pagination logic
 - [ ] small screen, blog photo goes to up
