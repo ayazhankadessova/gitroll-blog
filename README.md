@@ -46,7 +46,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 fix:
 
 1. theme, search in navbar
-2. copy , make like components
+2. [x] search
+3. Sort By
 
 bugs:
 

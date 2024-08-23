@@ -21,3 +21,25 @@ export function sortPosts(posts: Array<Post>) {
     return 0
   })
 }
+
+export function filterPostsBySearchTerm(
+  posts: Array<Post>,
+  searchTerm: string
+): Array<Post> {
+  if (!searchTerm) return posts
+
+  const normalizedSearchTerm = searchTerm.toLowerCase().trim()
+
+  return posts.filter((post) => {
+    const { title, description, tags } = post
+    const normalizedTitle = title.toLowerCase()
+    const normalizedExcerpt = description?.toLowerCase()
+    const normalizedTags = tags?.map((tag) => tag.toLowerCase())
+
+    return (
+      normalizedTitle.includes(normalizedSearchTerm) ||
+      normalizedExcerpt?.includes(normalizedSearchTerm) ||
+      normalizedTags?.some((tag) => tag.includes(normalizedSearchTerm))
+    )
+  })
+}
