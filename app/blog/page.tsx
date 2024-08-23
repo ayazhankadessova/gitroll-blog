@@ -21,10 +21,10 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
-const POSTS_PER_PAGE = 5
 interface BlogPageProps {
   searchParams: {
     page?: string
+    perPage?: string
   }
 }
 
@@ -40,12 +40,13 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
       ? sortPosts(publishedPosts)
       : sortPostsByTitle(publishedPosts)
   const currentPage = Number(searchParams?.page) || 1
+  const currentPerPage = Number(searchParams?.perPage) || 2
 
-  const totalPages = Math.ceil(publishedPosts.length / POSTS_PER_PAGE)
+  const totalPages = Math.ceil(publishedPosts.length / currentPerPage)
 
   const displayPosts = sortedPosts.slice(
-    POSTS_PER_PAGE * (currentPage - 1),
-    POSTS_PER_PAGE * currentPage
+    currentPerPage * (currentPage - 1),
+    currentPerPage * currentPage
   )
 
   const handleSearchTextChange = (

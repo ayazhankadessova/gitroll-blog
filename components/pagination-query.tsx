@@ -14,7 +14,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
@@ -33,29 +32,43 @@ export function CustomPagination({
   const searchParams = useSearchParams()
 
   const currentPage = Number(searchParams.get('page')) || 1
+  const currentPerPage = Number(searchParams.get('perPage')) || 2
 
   const prevPage = currentPage - 1
   const nextPage = currentPage + 1
 
-  const createPageURL = (pageNumber: number | string) => {
+  const createPageURL = (
+    pageNumber: number | string,
+    perPage: number | string
+  ) => {
     const params = new URLSearchParams(searchParams)
     params.set('page', pageNumber.toString())
+    params.set('perPage', perPage.toString())
+
     return `${pathname}?${params.toString()}`
+  }
+
+  const handlePerPageChange = (value: string) => {
+    const params = new URLSearchParams(searchParams)
+    params.set('perPage', value)
+    params.set('page', '1')
+
+    window.location.href = `${pathname}?${params.toString()}`
   }
 
   return (
     <Pagination className={className}>
       <PaginationContent>
         <p className='m-2'>Rows per page</p>
-        <Select>
+        <Select onValueChange={handlePerPageChange}>
           <SelectTrigger className='w-[70px]'>
-            <SelectValue placeholder='10' />
+            <SelectValue placeholder={currentPerPage} />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
+              <SelectItem value='2'>2</SelectItem>
+              <SelectItem value='5'>5</SelectItem>
               <SelectItem value='10'>10</SelectItem>
-              <SelectItem value='20'>20</SelectItem>
-              <SelectItem value='30'>30</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
@@ -65,7 +78,7 @@ export function CustomPagination({
 
         <PaginationItem>
           <PaginationPrevious
-            href={createPageURL(prevPage)}
+            href={createPageURL(prevPage, currentPerPage)}
             aria-disabled={currentPage <= 1}
             tabIndex={currentPage <= 1 ? -1 : undefined}
             className={currentPage <= 1 ? 'pointer-events-none' : undefined}
@@ -73,7 +86,7 @@ export function CustomPagination({
         </PaginationItem>
 
         <PaginationNext
-          href={createPageURL(nextPage)}
+          href={createPageURL(nextPage, currentPerPage)}
           aria-disabled={nextPage > totalPages}
           tabIndex={nextPage > totalPages ? -1 : undefined}
           className={nextPage > totalPages ? 'pointer-events-none' : undefined}
