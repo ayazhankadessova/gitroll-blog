@@ -47,7 +47,7 @@ fix:
 
 1. theme, search in navbar
 2. [x] search
-3. Sort By
+3. [x] Sort By
 
 bugs:
 

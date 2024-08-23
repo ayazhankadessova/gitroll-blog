@@ -4,6 +4,7 @@ import './globals.css'
 import { cn } from '@/lib/utils'
 import { SiteHeader } from '@/components/site-header'
 import { BlogFooter } from '@/components/footer'
+import { Providers } from '@/components/providers'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-mono' })
 
@@ -25,12 +26,14 @@ export default function RootLayout({
           inter.variable)
         }
       >
-        <div className='relative flex min-h-dvh flex-col bg-background px-4'>
-          {/* fill everything */}
-          <SiteHeader />
-          <main className='flex-1'>{children}</main>
-          <BlogFooter />
-        </div>
+        <Providers>
+          <div className='relative flex min-h-dvh flex-col bg-background px-4'>
+            {/* fill everything */}
+            <SiteHeader />
+            <main className='flex-1'>{children}</main>
+            <BlogFooter />
+          </div>
+        </Providers>
       </body>
     </html>
   )
