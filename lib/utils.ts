@@ -22,6 +22,14 @@ export function sortPosts(posts: Array<Post>) {
   })
 }
 
+export function sortPostsByTitle(posts: Array<Post>) {
+  return posts.sort((a, b) => {
+    if (a.title.toLowerCase() < b.title.toLowerCase()) return -1
+    if (a.title.toLowerCase() > b.title.toLowerCase()) return 1
+    return 0
+  })
+}
+
 export function filterPostsBySearchTerm(
   posts: Array<Post>,
   searchTerm: string

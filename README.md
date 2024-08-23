@@ -58,3 +58,4 @@ bugs:
 - [ ] tags not grouped
 - [ ] light/dark mode
 - [ ] pagination logic
+- [ ] small screen, blog photo goes to up
