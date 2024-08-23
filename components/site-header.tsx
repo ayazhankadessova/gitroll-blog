@@ -44,51 +44,50 @@ export function SiteHeader() {
     <header className={headerClass}>
       <MainNav />
 
-      {isDesktop ? (
-        <>
-          <NavigationMenu className='no-scrollbar hidden max-w-30 sm:flex md:flex lg:flex'>
-            <NavigationMenuList>
-              {Object.values(headerNavLinks).map((dialog) => (
-                <NavigationMenuItem key={dialog.title}>
-                  {dialog.toggle ? (
-                    <>
-                      <NavigationMenuTrigger>
-                        {dialog.title}{' '}
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        <ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
-                          {dialog.dropdown.map((component) => (
-                            <ListItem
-                              key={component.title}
-                              title={component.title}
-                              href={component.href}
-                            >
-                              {component.description}
-                            </ListItem>
-                          ))}
-                        </ul>
-                      </NavigationMenuContent>
-                    </>
-                  ) : (
-                    <Link href='/docs' legacyBehavior passHref>
-                      <NavigationMenuLink>{dialog.title}</NavigationMenuLink>
-                    </Link>
-                  )}
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-          <ThemeToggle />
-          <Link href='' className={buttonVariants({ variant: 'default' })}>
-            Contact Us
-          </Link>
-        </>
-      ) : (
-        <div>
-          <ThemeToggle />
-          <MobileNav />
-        </div>
-      )}
+      <NavigationMenu className='hidden max-w-30 sm:inline-block'>
+        <NavigationMenuList>
+          {Object.values(headerNavLinks).map((dialog) => (
+            <NavigationMenuItem key={dialog.title}>
+              {dialog.toggle ? (
+                <>
+                  <NavigationMenuTrigger>{dialog.title} </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
+                      {dialog.dropdown.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </>
+              ) : (
+                <Link href='/docs' legacyBehavior passHref>
+                  <NavigationMenuLink>{dialog.title}</NavigationMenuLink>
+                </Link>
+              )}
+            </NavigationMenuItem>
+          ))}
+        </NavigationMenuList>
+      </NavigationMenu>
+
+      <div>
+        <ThemeToggle />
+        <MobileNav />
+      </div>
+      <Link
+        href=''
+        className={cn(
+          buttonVariants({ variant: 'default' }),
+          'hidden sm:inline-block'
+        )}
+      >
+        Contact Us
+      </Link>
     </header>
   )
 }
