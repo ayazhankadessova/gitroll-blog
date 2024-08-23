@@ -49,7 +49,8 @@ fix:
 2. [x] search
 3. [x] Sort By
 4. [x] theme
-5. - button theme too big
+5. [x] button theme too big
+6. [ ] picture in post-item should be at the end
 
 bugs:
 
