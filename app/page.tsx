@@ -24,7 +24,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='container m-0 xl:px-2 4xl:px-2 lg:py-0 flex flex-col space-y-6'>
+      <section className='container xl:mx-7 4xl:px-2 4xl:px-2 lg:py-0 flex flex-col space-y-6'>
         <h2 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
           Latest Articles
         </h2>
