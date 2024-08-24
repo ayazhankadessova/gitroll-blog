@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import * as runtime from 'react/jsx-runtime'
-import React from 'react'
+import React, { memo } from 'react'
 import { Callout } from './callout'
 
 const useMDXComponent = (code: string) => {
@@ -17,7 +17,7 @@ interface MdxProps {
   code: string
 }
 
-export function MDXContent({ code }: MdxProps) {
+export const MDXContent = memo(({ code }: MdxProps) => {
   const Component = useMDXComponent(code)
   return <Component components={components} />
-}
+})
