@@ -15,6 +15,9 @@ export default {
       fullUrl: true,
     },
   },
+  images: {
+    domains: ['picsum.photos'],
+  },
 }
 
 class VeliteWebpackPlugin {

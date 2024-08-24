@@ -4,7 +4,6 @@ import { cn, sortPosts } from '@/lib/utils'
 import { posts } from '#site/content'
 import Link from 'next/link'
 import { PostItem } from '@/components/post-item'
-import { Input } from '@/components/ui/input'
 
 export default function Home() {
   const latestPosts = sortPosts(posts).slice(0, 5)
@@ -43,6 +42,7 @@ export default function Home() {
                     description={post.description}
                     date={post.date}
                     tags={post.tags}
+                    image={post.image}
                   />
                 </li>
               )

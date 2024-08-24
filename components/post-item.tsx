@@ -11,6 +11,7 @@ interface PostItemProps {
   description?: string
   date: string
   tags?: Array<string>
+  image: string
 }
 
 export function PostItem({
@@ -19,6 +20,7 @@ export function PostItem({
   description,
   date,
   tags,
+  image,
 }: PostItemProps) {
   return (
     <article className='flex-1 flex flex-col gap-2 border-border border-b py-3'>
@@ -51,11 +53,11 @@ export function PostItem({
         </div>
         <div>
           <Image
-            src='/gitroll.png'
+            src={image}
             alt=''
-            className='rounded-lg w-full sm:w-[17rem] xl:w-full p-4'
-            width={800}
-            height={300}
+            className='rounded-lg sm:w-[12rem] xl:w-full p-4'
+            width={500}
+            height={100}
           />
         </div>
       </div>
