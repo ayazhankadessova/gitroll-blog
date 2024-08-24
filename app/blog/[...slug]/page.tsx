@@ -28,7 +28,7 @@ export async function generateStaticParams(): Promise<
   console.log('generating static params')
   return posts.map((post) => ({
     slug: post.slugAsParams.split('/'),
-    revalidate: 7200, // Revalidate the page every 60 seconds
+    revalidate: 5, // Revalidate the page every 60 seconds
   }))
 }
 
