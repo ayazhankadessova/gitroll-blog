@@ -25,10 +25,9 @@ async function getPostFromParams(params: PostPageProps['params']) {
 export async function generateStaticParams(): Promise<
   { slug: string[]; revalidate?: number }[]
 > {
-  console.log('generating static params')
   return posts.map((post) => ({
     slug: post.slugAsParams.split('/'),
-    revalidate: 5, // Revalidate the page every 60 seconds
+    revalidate: 7200,
   }))
 }
 
