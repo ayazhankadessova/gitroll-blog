@@ -19,5 +19,6 @@ interface MdxProps {
 
 export const MDXContent = memo(({ code }: MdxProps) => {
   const Component = useMDXComponent(code)
+  Component.displayName = 'MyComponent'
   return <Component components={components} />
 })
