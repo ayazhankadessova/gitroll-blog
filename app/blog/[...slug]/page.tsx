@@ -23,9 +23,13 @@ async function getPostFromParams(params: PostPageProps['params']) {
 
 // if slug is same as slugAsParams of one of the pages
 export async function generateStaticParams(): Promise<
-  PostPageProps['params'][]
+  { slug: string[]; revalidate?: number }[]
 > {
-  return posts.map((post) => ({ slug: post.slugAsParams.split('/') }))
+  console.log('generating static params')
+  return posts.map((post) => ({
+    slug: post.slugAsParams.split('/'),
+    revalidate: 7200, // Revalidate the page every 60 seconds
+  }))
 }
 
 export default async function PostPage({ params }: PostPageProps) {

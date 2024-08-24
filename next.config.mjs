@@ -10,6 +10,11 @@ export default {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
 }
 
 class VeliteWebpackPlugin {
