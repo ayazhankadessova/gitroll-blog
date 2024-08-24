@@ -5,7 +5,9 @@ import { Callout } from './callout'
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code)
-  return fn({ ...runtime }).default
+  const Component = fn({ ...runtime }).default
+  Component.displayName = 'MDXContent'
+  return Component
 }
 
 const components = {
@@ -19,6 +21,5 @@ interface MdxProps {
 
 export const MDXContent = memo(({ code }: MdxProps) => {
   const Component = useMDXComponent(code)
-  Component.displayName = 'MyComponent'
   return <Component components={components} />
 })
