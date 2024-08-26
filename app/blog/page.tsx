@@ -88,17 +88,9 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
       {displayPosts?.length > 0 ? (
         <ul className='flex flex-col'>
           {displayPosts.map((post) => {
-            const { slug, date, title, description, tags, image } = post
             return (
-              <li key={slug}>
-                <PostItem
-                  slug={slug}
-                  date={date}
-                  title={title}
-                  description={description}
-                  tags={tags}
-                  image={image}
-                />
+              <li key={post.slug}>
+                <PostItem post={post} />
               </li>
             )
           })}

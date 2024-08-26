@@ -6,8 +6,6 @@ import { buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { SharePost } from '@/components/share-post'
-
-// import '@/styles/mdx.css'
 interface PostPageProps {
   params: {
     slug: string[]

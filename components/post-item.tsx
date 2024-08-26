@@ -6,22 +6,19 @@ import React from 'react'
 import Image from 'next/image'
 
 interface PostItemProps {
-  slug: string
-  title: string
-  description?: string
-  date: string
-  tags?: Array<string>
-  image: string
+  post: {
+    slug: string
+    title: string
+    description?: string
+    date: string
+    tags?: Array<string>
+    image: string
+  }
 }
 
-export function PostItem({
-  slug,
-  title,
-  description,
-  date,
-  tags,
-  image,
-}: PostItemProps) {
+export function PostItem({ post }: PostItemProps) {
+  const { slug, title, description, date, tags, image } = post
+
   return (
     <article className='flex-1 flex flex-col gap-2 border-border border-b py-3'>
       <div className='flex flex-col-reverse sm:flex-row justify-between'>
