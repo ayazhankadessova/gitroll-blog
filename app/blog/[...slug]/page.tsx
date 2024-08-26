@@ -2,11 +2,10 @@ import { posts } from '#site/content'
 import { notFound } from 'next/navigation'
 import { MDXContent } from '@/components/mdx-components'
 import { ChevronLeft } from 'lucide-react'
-import { buttonVariants } from '@/components/ui/button'
-import Link from 'next/link'
-import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
 import { SharePost } from '@/components/share-post'
 import { siteConfig } from '@/config/site'
+import BackButton from '@/components/backbutton'
 
 interface PostPageProps {
   params: {
@@ -42,18 +41,7 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <div className='container max-w-xl lg:max-w-[850px] mx-auto px-4 py-6 md:px-6'>
       <div className='flex items-start justify-between'>
-        <Link
-          href='/blog'
-          className={cn(
-            buttonVariants({
-              variant: 'ghost',
-            }),
-            'ml-0 py-0 px-0'
-          )}
-        >
-          <ChevronLeft className='h-4 w-4' />
-          BACK
-        </Link>
+        <BackButton />
         <SharePost fullLink={fullLinkGenerated} />
       </div>
       <article className='prose prose-img:rounded-xl max-w-none mt-2'>

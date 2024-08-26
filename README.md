@@ -63,7 +63,7 @@ Code review:
 2. It is not advisable to ignore eslint when building the application, it can lead to technical debt as issues and problems in the codebase might go undetected; please fix the error in @/components/mdx-components.tsx
 3. The header looks nice and I like the dark mode toggle; but note that FAQ doesn't look consistent with Products and Our Story; also, the text for Contact Us isn't center aligned
 4. I would suggest to have the post date as a POSIX timestamp, so you could perform sorting and formatting easier
-   For the back button in your single blog page, I'd like to use router.back() instead of navigating back to /blog , so that it remembers your search params
-5. I'd like to see you implement the copy share link to clipboard too
+5. [x] I'd like to see you implement the copy share link to clipboard too
 6. In mobile view, when you scroll down a little bit then open and close the mobile nav menu, the scroll position changes, which signals a re-render is triggered somewhere; try to fix this too
 7. [x] Might as well pass in the whole post object into PostItem so that you don't have to declare and destructure so many props
+8. [x] For the back button in your single blog page, I'd like to use router.back() instead of navigating back to /blog , so that it remembers your search params
