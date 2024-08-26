@@ -6,6 +6,8 @@ import { buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { SharePost } from '@/components/share-post'
+import { siteConfig } from '@/config/site'
+
 interface PostPageProps {
   params: {
     slug: string[]
@@ -31,6 +33,7 @@ export async function generateStaticParams(): Promise<
 
 export default async function PostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params)
+  const fullLinkGenerated = `${siteConfig.url}/blog/${params?.slug?.join('/')}`
 
   if (!post || !post.published) {
     notFound()
@@ -51,7 +54,7 @@ export default async function PostPage({ params }: PostPageProps) {
           <ChevronLeft className='h-4 w-4' />
           BACK
         </Link>
-        <SharePost />
+        <SharePost fullLink={fullLinkGenerated} />
       </div>
       <article className='prose prose-img:rounded-xl max-w-none mt-2'>
         <h1 className='mb-2'>{post.title}</h1>

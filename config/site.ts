@@ -4,7 +4,7 @@
 
 export const siteConfig = {
   name: 'Gitroll',
-  url: 'https://gitroll.io/blog',
+  url: 'https://gitroll.io',
   description:
     'GitRoll shows the real coding skills of developers✨Talk is cheap. Show me the code.',
   socials: {
