@@ -10,7 +10,7 @@ interface PostItemProps {
     slug: string
     title: string
     description?: string
-    date: string
+    date: number
     tags?: Array<string>
     image: string
   }
@@ -30,7 +30,7 @@ export function PostItem({ post }: PostItemProps) {
               </Avatar>
               <div>
                 <p className='text-sm font-bold'>GitRoll</p>
-                <time dateTime={date} className='text-sm'>
+                <time className='text-sm' suppressHydrationWarning>
                   {formatDate(date)}
                 </time>
               </div>

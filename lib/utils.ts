@@ -5,8 +5,8 @@ import { Post } from '#site/content'
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
-export function formatDate(input: string | number): string {
-  const date = new Date(input)
+export function formatDate(input: number): string {
+  const date = new Date(input * 1000)
   return date.toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
@@ -15,19 +15,13 @@ export function formatDate(input: string | number): string {
 }
 
 export function sortPosts(posts: Array<Post>) {
-  return posts.sort((a, b) => {
-    if (a.date > b.date) return -1
-    if (a.date < b.date) return 1
-    return 0
-  })
+  return posts.sort((a, b) => b.date - a.date)
 }
 
-export function sortPostsByTitle(posts: Array<Post>) {
-  return posts.sort((a, b) => {
-    if (a.title.toLowerCase() < b.title.toLowerCase()) return -1
-    if (a.title.toLowerCase() > b.title.toLowerCase()) return 1
-    return 0
-  })
+export function sortPostsByTitle(posts: Array<Post>): Array<Post> {
+  return posts.sort((a, b) =>
+    a.title.toLowerCase().localeCompare(b.title.toLowerCase())
+  )
 }
 
 export function filterPostsBySearchTerm(
