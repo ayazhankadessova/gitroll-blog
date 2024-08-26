@@ -15,30 +15,11 @@ import headerNavLinks from '@/config/headerNavLinks'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { ThemeToggle } from './theme-toggle'
-
-const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState<{ width: number | undefined }>({
-    width: undefined,
-  })
-
-  useEffect(() => {
-    const handleResize = () => setWindowSize({ width: window.innerWidth })
-
-    window.addEventListener('resize', handleResize)
-    handleResize() // Initialize size on first render
-
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  return windowSize
-}
+import { ChevronDown } from 'lucide-react'
 
 export function SiteHeader() {
-  const { width } = useWindowSize()
   const headerClass =
     'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-5 sticky top-0 z-50'
-
-  const isDesktop = width !== undefined && width >= 650 // Adjust threshold as needed
 
   return (
     <header className={headerClass}>
@@ -50,7 +31,13 @@ export function SiteHeader() {
             <NavigationMenuItem key={dialog.title}>
               {dialog.toggle ? (
                 <>
-                  <NavigationMenuTrigger>{dialog.title} </NavigationMenuTrigger>
+                  <NavigationMenuTrigger>
+                    {dialog.title}
+                    <ChevronDown
+                      className='relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180'
+                      aria-hidden='true'
+                    />
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
                       {dialog.dropdown.map((component) => (
@@ -66,8 +53,8 @@ export function SiteHeader() {
                   </NavigationMenuContent>
                 </>
               ) : (
-                <Link href='/docs' legacyBehavior passHref>
-                  <NavigationMenuLink>{dialog.title}</NavigationMenuLink>
+                <Link href={dialog.href}>
+                  <NavigationMenuTrigger>{dialog.title}</NavigationMenuTrigger>
                 </Link>
               )}
             </NavigationMenuItem>
