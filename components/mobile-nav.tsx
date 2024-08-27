@@ -1,6 +1,12 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock'
+
 import { Button } from './ui/button'
 import { Menu } from 'lucide-react'
 import Link, { LinkProps } from 'next/link'
@@ -12,8 +18,26 @@ import { ThemeToggle } from './theme-toggle'
 export default function MobileNav() {
   const [open, setOpen] = useState(false)
 
+  const navRef = useRef(null)
+
+  const onToggleNav = () => {
+    setOpen((status) => {
+      if (status) {
+        enableBodyScroll(navRef.current!)
+      } else {
+        // Prevent scrolling
+        disableBodyScroll(navRef.current!)
+      }
+      return !status
+    })
+  }
+
+  useEffect(() => {
+    return clearAllBodyScrollLocks
+  })
+
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
+    <Sheet open={open} onOpenChange={onToggleNav}>
       <ThemeToggle />
       <SheetTrigger asChild>
         <Button variant='ghost' className='w-10 px-0 min-[750px]:hidden'>
@@ -22,7 +46,7 @@ export default function MobileNav() {
       </SheetTrigger>
       <SheetContent side='right'>
         <MobileLink
-          onOpenChange={setOpen}
+          onOpenChange={onToggleNav}
           href='/'
           className='flex items-center'
         >
@@ -32,7 +56,7 @@ export default function MobileNav() {
           {Object.values(headerNavLinks).map((dialog) => (
             <MobileLink
               key={dialog.title}
-              onOpenChange={setOpen}
+              onOpenChange={onToggleNav}
               href={dialog.href}
             >
               {dialog.title}

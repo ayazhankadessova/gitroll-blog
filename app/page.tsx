@@ -8,19 +8,18 @@ export default function Home() {
   const latestPosts = sortPosts(posts).slice(0, 5)
   return (
     <div className='container max-w-4xl py-2 lg:py-3 px-0'>
-      <div className='flex flex-col gap-4 justify-center sm:flex-row'>
+      <div className='flex justify-center'>
         <Link
           href='/blog'
-          className={cn(
-            buttonVariants({ size: 'lg', variant: 'outline' }),
-            'w-full sm:w-fit'
-          )}
+          className={cn(buttonVariants({ size: 'lg', variant: 'outline' }))}
         >
           View GitRoll blog
         </Link>
       </div>
       <div className='flex justify-between'>
-        <h1 className='font-black text-3xl lg:text-4xl'>Latest Articles</h1>
+        <h1 className='font-black text-3xl lg:text-4xl mt-2'>
+          Latest Articles
+        </h1>
       </div>
       <hr className='mt-4'></hr>
 
