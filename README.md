@@ -60,7 +60,7 @@ Code review:
 
 1. The home page blog articles section isn't centered on larger screens
    Check this link to fix the export pattern in next config
-2. It is not advisable to ignore eslint when building the application, it can lead to technical debt as issues and problems in the codebase might go undetected; please fix the error in @/components/mdx-components.tsx
+2. [x] It is not advisable to ignore eslint when building the application, it can lead to technical debt as issues and problems in the codebase might go undetected; please fix the error in @/components/mdx-components.tsx
 3. [x]The header looks nice and I like the dark mode toggle; but note that FAQ doesn't look consistent with Products and Our Story;
 4. [x] also, the text for Contact Us isn't center aligned
 5. [x] I would suggest to have the post date as a POSIX timestamp, so you could perform sorting and formatting easier

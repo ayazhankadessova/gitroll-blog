@@ -23,3 +23,5 @@ export const MDXContent = memo(({ code }: MdxProps) => {
   const Component = useMDXComponent(code)
   return <Component components={components} />
 })
+
+MDXContent.displayName = 'MyComponent'
