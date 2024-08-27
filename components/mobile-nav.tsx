@@ -7,16 +7,17 @@ import Link, { LinkProps } from 'next/link'
 import { useRouter } from 'next/navigation'
 import { siteConfig } from '@/config/site'
 import headerNavLinks from '@/config/headerNavLinks'
+import { ThemeToggle } from './theme-toggle'
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false)
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
+      <ThemeToggle />
       <SheetTrigger asChild>
-        <Button variant='ghost' className='w-10 px-0 sm:hidden'>
-          <Menu className='h-5 w-5' />
-          <span className='sr-only'>Toggle Theme</span>
+        <Button variant='ghost' className='w-10 px-0 min-[750px]:hidden'>
+          <Menu className='h-[1.1rem] w-[1.2rem]' />
         </Button>
       </SheetTrigger>
       <SheetContent side='right'>

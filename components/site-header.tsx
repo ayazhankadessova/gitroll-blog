@@ -19,62 +19,71 @@ import { ChevronDown } from 'lucide-react'
 
 export function SiteHeader() {
   const headerClass =
-    'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-5 sticky top-0 z-50'
+    'container flex max-w-screen-2xl px-4 md:px-8 h-20 z-10 flex flex-row justify-between gap-2 items-center sticky top-0 bg-background'
 
   return (
     <header className={headerClass}>
       <MainNav />
 
-      <NavigationMenu className='hidden max-w-30 sm:inline-block'>
-        <NavigationMenuList>
-          {Object.values(headerNavLinks).map((dialog) => (
-            <NavigationMenuItem key={dialog.title}>
-              {dialog.toggle ? (
-                <>
-                  <NavigationMenuTrigger>
-                    {dialog.title}
-                    <ChevronDown
-                      className='relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180'
-                      aria-hidden='true'
-                    />
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
-                      {dialog.dropdown.map((component) => (
-                        <ListItem
-                          key={component.title}
-                          title={component.title}
-                          href={component.href}
-                        >
-                          {component.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </>
-              ) : (
-                <Link href={dialog.href}>
-                  <NavigationMenuTrigger>{dialog.title}</NavigationMenuTrigger>
-                </Link>
-              )}
-            </NavigationMenuItem>
-          ))}
-        </NavigationMenuList>
-      </NavigationMenu>
+      <div className='hidden min-[750px]:block ml-6'>
+        <NavigationMenu className='hidden max-w-30 sm:inline-block'>
+          <NavigationMenuList>
+            {Object.values(headerNavLinks).map((dialog) => (
+              <NavigationMenuItem key={dialog.title}>
+                {dialog.toggle ? (
+                  <>
+                    <NavigationMenuTrigger>
+                      {dialog.title}
+                      <ChevronDown
+                        className='relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180'
+                        aria-hidden='true'
+                      />
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
+                        {dialog.dropdown.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </>
+                ) : (
+                  <Link href={dialog.href}>
+                    <NavigationMenuTrigger>
+                      {dialog.title}
+                    </NavigationMenuTrigger>
+                  </Link>
+                )}
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
 
-      <div>
-        <ThemeToggle />
+      <div className='min-[750px]:hidden'>
         <MobileNav />
       </div>
-      <Link
-        href=''
-        className={cn(
-          buttonVariants({ variant: 'default' }),
-          'hidden sm:inline-block'
-        )}
-      >
-        Contact Us
-      </Link>
+
+      <div className='hidden min-[750px]:inline-flex items-end'>
+        <div>
+          <ThemeToggle />
+        </div>
+        <Link
+          href=''
+          className={cn(
+            buttonVariants({ variant: 'default', size: 'sm' }),
+            'group justify-center rounded-md bg-primary text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50'
+          )}
+        >
+          Contact Us
+        </Link>
+      </div>
     </header>
   )
 }

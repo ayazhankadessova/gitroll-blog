@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <section className='space-y-2 pb-6 pt-4 md:pb-10 md:mt-2'>
-        <div className='container flex flex-col gap-4 text-center'>
+        <div className='container flex max-w-screen-2xl flex-col gap-4 text-center'>
           <div className='flex flex-col gap-4 justify-center sm:flex-row'>
             <Link
               href='/blog'
@@ -24,10 +24,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='container xl:mx-7 4xl:px-2 4xl:px-2 lg:py-0 flex flex-col space-y-6'>
-        <h2 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>
+      <section className='container flex max-w-screen-2xl flex-col space-y-6'>
+        <h3 className='scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-5xl'>
           Latest Articles
-        </h2>
+        </h3>
         <ul className='flex flex-col'>
           {latestPosts.map(
             (post) =>
