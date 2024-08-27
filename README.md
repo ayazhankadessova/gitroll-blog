@@ -58,13 +58,13 @@ bugs:
 
 Code review:
 
-1. The home page blog articles section isn't centered on larger screens
-   Check this link to fix the export pattern in next config
-2. [x] It is not advisable to ignore eslint when building the application, it can lead to technical debt as issues and problems in the codebase might go undetected; please fix the error in @/components/mdx-components.tsx
-3. [x]The header looks nice and I like the dark mode toggle; but note that FAQ doesn't look consistent with Products and Our Story;
-4. [x] also, the text for Contact Us isn't center aligned
-5. [x] I would suggest to have the post date as a POSIX timestamp, so you could perform sorting and formatting easier
-6. [x] I'd like to see you implement the copy share link to clipboard too
-7. In mobile view, when you scroll down a little bit then open and close the mobile nav menu, the scroll position changes, which signals a re-render is triggered somewhere; try to fix this too
-8. [x] Might as well pass in the whole post object into PostItem so that you don't have to declare and destructure so many props
-9. [x] For the back button in your single blog page, I'd like to use router.back() instead of navigating back to /blog , so that it remembers your search params
+1. [x] The home page blog articles section isn't centered on larger screens
+2. [x] Check this link to fix the export pattern in next config
+3. [x] It is not advisable to ignore eslint when building the application, it can lead to technical debt as issues and problems in the codebase might go undetected; please fix the error in @/components/mdx-components.tsx
+4. [x]The header looks nice and I like the dark mode toggle; but note that FAQ doesn't look consistent with Products and Our Story;
+5. [x] also, the text for Contact Us isn't center aligned
+6. [x] I would suggest to have the post date as a POSIX timestamp, so you could perform sorting and formatting easier
+7. [x] I'd like to see you implement the copy share link to clipboard too
+8. In mobile view, when you scroll down a little bit then open and close the mobile nav menu, the scroll position changes, which signals a re-render is triggered somewhere; try to fix this too
+9. [x] Might as well pass in the whole post object into PostItem so that you don't have to declare and destructure so many props
+10. [x] For the back button in your single blog page, I'd like to use router.back() instead of navigating back to /blog , so that it remembers your search params

@@ -1,8 +1,8 @@
-import { build } from 'velite'
+// @ts-check
 
+import { build } from 'velite'
 /** @type {import('next').NextConfig} */
-export default {
-  // othor next config here...
+const nextConfig = {
   webpack: (config) => {
     config.plugins.push(new VeliteWebpackPlugin())
     return config
@@ -30,3 +30,5 @@ class VeliteWebpackPlugin {
     })
   }
 }
+
+export default nextConfig

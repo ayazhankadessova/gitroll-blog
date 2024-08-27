@@ -19,7 +19,7 @@ import { ChevronDown } from 'lucide-react'
 
 export function SiteHeader() {
   const headerClass =
-    'container flex max-w-screen-2xl px-4 md:px-8 h-20 z-10 flex flex-row justify-between gap-2 items-center sticky top-0 bg-background'
+    'container flex max-w-screen-2xl px-2 h-20 z-10 flex flex-row justify-between gap-2 items-center sticky top-0 bg-background'
 
   return (
     <header className={headerClass}>
